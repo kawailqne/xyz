@@ -1,0 +1,380 @@
+<!DOCTYPE html><html><head><base href="https://www.jibawatch.fr/styles/2/index.html"><meta charset="utf-8"><meta name="download_date" content="2025-01-12T14:10:22.843Z"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jibawatch</title>
+    <style>/* Fond d'écran futuriste */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("undefined") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* Effet d'overlay dynamique */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    animation: moveOverlay 10s infinite linear;
+}
+
+@keyframes moveOverlay {
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+/* Conteneur principal avec style futuriste */
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 10;
+    width: 80%;
+    max-width: 1000px;
+    overflow-y: auto; /* Permet le défilement */
+    max-height: 80vh; /* Limite la hauteur du conteneur */
+}
+
+/* Animation de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style de la photo de profil */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #fff;
+    animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+/* Glow animé sur la photo */
+@keyframes profileGlow {
+    from { box-shadow: 0 0 10px #fff, 0 0 30px #ee9825; }
+    to { box-shadow: 0 0 20px #ee9825, 0 0 50px #ffb74d; }
+}
+
+/* Conteneur des sections */
+.sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Style pour chaque section */
+.section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    width: 45%;
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(238, 152, 37, 0.7);
+}
+
+/* Style du titre des sections */
+.section h2 {
+    color: #ee9825;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Style des liens avec animation */
+.links a {
+    display: block;
+    margin: 10px 0;
+    padding: 15px;
+    background: rgba(238, 152, 37, 0.3);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease;
+    box-shadow: 0 5px 15px rgba(238, 152, 37, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.links a:hover {
+    background: rgba(238, 152, 37, 0.5);
+    box-shadow: 0 0 15px #ee9825, 0 0 30px #ffb74d;
+}
+
+.links a span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Bulles animées sur les boutons */
+.links a::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+.links a:hover::before {
+    transform: scale(1.5);
+}
+
+/* Texte d'accueil */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ee9825;
+    animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+/* Glow autour du titre */
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px #ee9825, 0 0 20px #ffb74d; }
+    to { text-shadow: 0 0 20px #ee9825, 0 0 40px #ffb74d; }
+}
+
+/* Texte de description */
+p {
+    font-size: 16px;
+    color: #e0e0e0; /* Contraste amélioré */
+    margin-bottom: 30px;
+}
+
+/* Style du footer */
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* Style de l'image cliquable */
+.clickable-image {
+    position: fixed;
+    bottom: 900px;
+    right: 50px;
+    width: 45px;
+    cursor: pointer;
+    animation: imagePulse 1.5s infinite alternate;
+}
+
+@keyframes imagePulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Style de la popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.popup-content {
+    background-color: #222;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 100px;
+    text-align: center;
+    border-radius: 10px;
+    animation: popupFadeIn 0.5s;
+}
+
+@keyframes popupFadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style de la barre de défilement */
+.container::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Couleur de la piste de la barre de défilement */
+    border-radius: 10px; /* Bords arrondis */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #ee9825; /* Couleur du pouce de la barre de défilement */
+    border-radius: 10px; /* Bords arrondis pour le pouce */
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #ee9825; /* Couleur du pouce lorsque la souris est dessus */
+}
+</style>
+    <style>
+        /* Styles pour la popup */
+        .popup {
+            display: none; /* Masqué par défaut */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85); /* Fond semi-transparent */
+            backdrop-filter: blur(5px); /* Flou d'arrière-plan */
+        }
+
+        .popup-content {
+            background: linear-gradient(145deg, #1d1f21, #282c34);
+            border-radius: 15px; /* Coins arrondis */
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.1);
+            margin: 15% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 600px; /* Largeur maximale pour le popup */
+            text-align: center; /* Centrer le texte */
+            color: #ffffff; /* Couleur du texte */
+            border: 1px solid #888;
+            animation: fadeIn 0.3s; /* Animation d'apparition */
+        }
+
+        .close {
+            color: #ff4757; /* Couleur de la croix */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ff6b81; /* Couleur de la croix au survol */
+            text-decoration: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<base href="https://www.jibawatch.fr/styles/2/index.html"></head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <img src="https://cdn.discordapp.com/attachments/1325188289589678145/1328005078912864319/3c3dd3c95068d945516f1ed023acca7c.jpg?ex=6785209b&is=6783cf1b&hm=89f50445b7c0c69bbf71624a09bfa4b7a2ce1f6b313e271c1f2f84b28aa9701a&" alt="kawail profil" class="profile-pic">
+        <h1>kawail</h1>
+        <p>salut ! moi ses kawail je suis modérateur sur des serveur de petit Influenceurs voici
+
+        <div class="sections">
+            <!-- Section Influenceurs -->
+            <div class="section">
+                <h2>Influenceurs que je gère</h2>
+                <div class="links">
+                    <a href="https://discord.gg/rfrbgn2ZBZ" target="_blank">
+                        <span>Discord skiz3l</span>
+                    </a>
+                    <a href="https://discord.gg/amsEZBB5gP" target="_blank">
+                        <span>mon discord </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Section Mes Réseaux -->
+            <div class="section">
+                <h2>Mes Réseaux</h2>
+                <div class="links">
+                    <a href="https://bit.ly/jibawatchbio" target="_blank">
+                        <span>guns.lol</span>
+                
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Popup -->
+        <div class="popup" id="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">×</span>
+                <h2>Attention !</h2>
+                <p>Si vous apercevez que la page n'est pas calibrée correctement ou que vous ne voyez pas les informations correctement, essayez soit de dézoomer la page, soit de scroller vers le bas !</p>
+                <p>Peace à vous ! jibawatch</p>
+            </div>
+        </div>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 kawail - Tous droits réservés 
+    </footer>
+
+    <script>
+        // Affichage de la popup
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+        };
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+
+
+
+</body>
